@@ -18,7 +18,7 @@ interface PlacesService {
      */
     @Headers("Authorization: ${BuildConfig.API_KEY}")
     @GET("places/nearby")
-    fun getVenueRecommendations(@QueryMap query: Map<String, String>): Call<ResponseWrapper>
+    suspend fun getVenueRecommendations(@QueryMap query: Map<String, String>): ResponseWrapper
 
     companion object  {
         private val retrofit by lazy {

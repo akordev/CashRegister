@@ -15,7 +15,11 @@ android {
         versionName = "1.0"
 
         buildConfigField("String", "FOURSQUARE_BASE_URL", "\"https://api.foursquare.com/v3/\"")
-        buildConfigField("String", "API_KEY", "\"<YOU_API_KEY_GOES_HERE>\"")
+        buildConfigField(
+            "String",
+            "API_KEY",
+            "\"fsq3NIIwDea4GLnRjRpQtVPNfl4ZNgFSrxwvb2m4KqhYE7Q=\""
+        )
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -26,7 +30,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -61,8 +68,18 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
-    implementation (libs.retrofit)
-    implementation (libs.converter.moshi)
+    implementation(libs.retrofit)
+    implementation(libs.converter.moshi)
+    implementation(libs.play.services.location)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.playServices)
+
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

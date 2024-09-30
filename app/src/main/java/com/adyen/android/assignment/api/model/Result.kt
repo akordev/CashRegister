@@ -1,5 +1,7 @@
 package com.adyen.android.assignment.api.model
 
+import com.adyen.android.assignment.domain.models.Venue
+
 data class Result(
     val categories: List<Category>,
     val distance: Int,
@@ -8,3 +10,10 @@ data class Result(
     val name: String,
     val timezone: String,
 )
+
+fun Result.toVenue(): Venue {
+    return Venue(
+        distance = distance,
+        name = name
+    )
+}
