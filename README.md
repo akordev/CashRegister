@@ -1,4 +1,4 @@
-# Adyen Android Assignment
+# Android Assignment
 
 This repository contains the coding challenge for candidates applying for a Senior Android role at Adyen.
 The Git repository is present in the zip file that you received and you can use it to show us your development process.
